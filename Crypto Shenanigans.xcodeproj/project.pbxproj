@@ -17,6 +17,22 @@
 		D2584D322748882D003BD3BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2584D312748882D003BD3BA /* HomeView.swift */; };
 		D2584D362748DA38003BD3BA /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2584D352748DA38003BD3BA /* Module.swift */; };
 		D2584D382748DD13003BD3BA /* ModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2584D372748DD13003BD3BA /* ModuleView.swift */; };
+		D26FCB9D2755F4EB000E9137 /* MyTradesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FCB9C2755F4EB000E9137 /* MyTradesController.swift */; };
+		D26FCB9F2755F520000E9137 /* MyTradesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FCB9E2755F520000E9137 /* MyTradesResponse.swift */; };
+		D26FCBA12755F864000E9137 /* TradeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FCBA02755F864000E9137 /* TradeItem.swift */; };
+		D289A071274C499B00A464C1 /* PlatformModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A070274C499B00A464C1 /* PlatformModelController.swift */; };
+		D289A074274C49CA00A464C1 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A073274C49CA00A464C1 /* Platform.swift */; };
+		D289A076274C873000A464C1 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A075274C873000A464C1 /* PlatformView.swift */; };
+		D289A078274C9ADC00A464C1 /* PlatformListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A077274C9ADC00A464C1 /* PlatformListView.swift */; };
+		D289A080274CA0A900A464C1 /* PlatformStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A07F274CA0A900A464C1 /* PlatformStatus.swift */; };
+		D289A085274CAB8600A464C1 /* PlatformDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A084274CAB8600A464C1 /* PlatformDetailView.swift */; };
+		D289A089274CC1AD00A464C1 /* BalanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A088274CC1AD00A464C1 /* BalanceController.swift */; };
+		D289A08B274CC69300A464C1 /* MappedBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A08A274CC69300A464C1 /* MappedBalance.swift */; };
+		D289A08D274CCC7F00A464C1 /* BalanceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A08C274CCC7F00A464C1 /* BalanceItemView.swift */; };
+		D289A08F274CCF6100A464C1 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A08E274CCF6100A464C1 /* Mapper.swift */; };
+		D289A091274E281F00A464C1 /* BalanceTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A090274E281F00A464C1 /* BalanceTotal.swift */; };
+		D289A093274E287200A464C1 /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A092274E287200A464C1 /* BalanceResponse.swift */; };
+		D289A095274E289500A464C1 /* BalanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A094274E289500A464C1 /* BalanceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +47,22 @@
 		D2584D312748882D003BD3BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D2584D352748DA38003BD3BA /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		D2584D372748DD13003BD3BA /* ModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleView.swift; sourceTree = "<group>"; };
+		D26FCB9C2755F4EB000E9137 /* MyTradesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTradesController.swift; sourceTree = "<group>"; };
+		D26FCB9E2755F520000E9137 /* MyTradesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTradesResponse.swift; sourceTree = "<group>"; };
+		D26FCBA02755F864000E9137 /* TradeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeItem.swift; sourceTree = "<group>"; };
+		D289A070274C499B00A464C1 /* PlatformModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModelController.swift; sourceTree = "<group>"; };
+		D289A073274C49CA00A464C1 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		D289A075274C873000A464C1 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
+		D289A077274C9ADC00A464C1 /* PlatformListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformListView.swift; sourceTree = "<group>"; };
+		D289A07F274CA0A900A464C1 /* PlatformStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformStatus.swift; sourceTree = "<group>"; };
+		D289A084274CAB8600A464C1 /* PlatformDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDetailView.swift; sourceTree = "<group>"; };
+		D289A088274CC1AD00A464C1 /* BalanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceController.swift; sourceTree = "<group>"; };
+		D289A08A274CC69300A464C1 /* MappedBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappedBalance.swift; sourceTree = "<group>"; };
+		D289A08C274CCC7F00A464C1 /* BalanceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemView.swift; sourceTree = "<group>"; };
+		D289A08E274CCF6100A464C1 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		D289A090274E281F00A464C1 /* BalanceTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTotal.swift; sourceTree = "<group>"; };
+		D289A092274E287200A464C1 /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
+		D289A094274E289500A464C1 /* BalanceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +79,14 @@
 		D228120A2746303A0018ED81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D289A07D274CA03C00A464C1 /* SubViews */,
 				D24AEDD827437FAB00098189 /* ContentView.swift */,
 				D24AEDE42743802D00098189 /* LoginView.swift */,
 				D2584D312748882D003BD3BA /* HomeView.swift */,
 				D2584D372748DD13003BD3BA /* ModuleView.swift */,
+				D289A075274C873000A464C1 /* PlatformView.swift */,
+				D289A077274C9ADC00A464C1 /* PlatformListView.swift */,
+				D289A084274CAB8600A464C1 /* PlatformDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -59,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D24AEDE62743889000098189 /* API.swift */,
+				D289A08E274CCF6100A464C1 /* Mapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -68,6 +105,7 @@
 			children = (
 				D2584D2E27487DC2003BD3BA /* API */,
 				D2584D352748DA38003BD3BA /* Module.swift */,
+				D289A08A274CC69300A464C1 /* MappedBalance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +136,7 @@
 		D24AEDD527437FAB00098189 /* Crypto Shenanigans */ = {
 			isa = PBXGroup;
 			children = (
+				D289A072274C49A400A464C1 /* Controller */,
 				D228120D2746305F0018ED81 /* Resources */,
 				D228120C2746304B0018ED81 /* Models */,
 				D228120B274630420018ED81 /* Utils */,
@@ -121,8 +160,33 @@
 			isa = PBXGroup;
 			children = (
 				D2584D2F27487DE4003BD3BA /* LoggedInResponse.swift */,
+				D289A073274C49CA00A464C1 /* Platform.swift */,
+				D289A090274E281F00A464C1 /* BalanceTotal.swift */,
+				D289A092274E287200A464C1 /* BalanceResponse.swift */,
+				D289A094274E289500A464C1 /* BalanceItem.swift */,
+				D26FCB9E2755F520000E9137 /* MyTradesResponse.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		D289A072274C49A400A464C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D289A070274C499B00A464C1 /* PlatformModelController.swift */,
+				D289A088274CC1AD00A464C1 /* BalanceController.swift */,
+				D26FCB9C2755F4EB000E9137 /* MyTradesController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D289A07D274CA03C00A464C1 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				D289A08C274CCC7F00A464C1 /* BalanceItemView.swift */,
+				D289A07F274CA0A900A464C1 /* PlatformStatus.swift */,
+				D26FCBA02755F864000E9137 /* TradeItem.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,14 +259,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D289A074274C49CA00A464C1 /* Platform.swift in Sources */,
+				D289A08B274CC69300A464C1 /* MappedBalance.swift in Sources */,
+				D289A071274C499B00A464C1 /* PlatformModelController.swift in Sources */,
+				D289A085274CAB8600A464C1 /* PlatformDetailView.swift in Sources */,
 				D24AEDE52743802D00098189 /* LoginView.swift in Sources */,
+				D26FCB9F2755F520000E9137 /* MyTradesResponse.swift in Sources */,
 				D24AEDD927437FAB00098189 /* ContentView.swift in Sources */,
+				D26FCB9D2755F4EB000E9137 /* MyTradesController.swift in Sources */,
 				D2584D3027487DE4003BD3BA /* LoggedInResponse.swift in Sources */,
+				D26FCBA12755F864000E9137 /* TradeItem.swift in Sources */,
+				D289A078274C9ADC00A464C1 /* PlatformListView.swift in Sources */,
 				D2584D322748882D003BD3BA /* HomeView.swift in Sources */,
+				D289A08D274CCC7F00A464C1 /* BalanceItemView.swift in Sources */,
+				D289A095274E289500A464C1 /* BalanceItem.swift in Sources */,
 				D2584D382748DD13003BD3BA /* ModuleView.swift in Sources */,
 				D2584D362748DA38003BD3BA /* Module.swift in Sources */,
+				D289A093274E287200A464C1 /* BalanceResponse.swift in Sources */,
+				D289A080274CA0A900A464C1 /* PlatformStatus.swift in Sources */,
+				D289A089274CC1AD00A464C1 /* BalanceController.swift in Sources */,
 				D24AEDE72743889000098189 /* API.swift in Sources */,
+				D289A076274C873000A464C1 /* PlatformView.swift in Sources */,
 				D24AEDD727437FAB00098189 /* Crypto_ShenanigansApp.swift in Sources */,
+				D289A08F274CCF6100A464C1 /* Mapper.swift in Sources */,
+				D289A091274E281F00A464C1 /* BalanceTotal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

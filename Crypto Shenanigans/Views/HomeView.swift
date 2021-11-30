@@ -6,6 +6,12 @@ struct HomeView: View {
     
     @State private var loading = false
     
+    @StateObject private var platformModelController: PlatformModelController = PlatformModelController()
+    
+    // There seems to be a bug in the current SwiftUI version (https://stackoverflow.com/questions/63080830/swifui-onappear-gets-called-twice),
+    // TODO: Remove this workaround once the bug is fixed by the framework.
+    @State private var firstAppear = true
+    
     private let apiHelper = API()
     
     func logout() async {
@@ -23,11 +29,20 @@ struct HomeView: View {
     var body: some View {
             List {
                 ForEach(Module.data) { module in
-                    NavigationLink(destination: Text(module.title)) {
+                    NavigationLink(destination: PlatformListView(name:module.title)
+                                    .environmentObject(platformModelController)) {
                         ModuleView(module: module)
                     }
                 }
             }
+            .onAppear(perform: {
+                if(firstAppear) {
+                    firstAppear = false
+                    Task.init {
+                        await platformModelController.load()
+                    }
+                }
+            })
             .if(loading) { view in
                 view.overlay(ProgressView())
             }

@@ -11,8 +11,8 @@ enum CustomError: Error {
 class API {
     
     enum BaseUrl: String {
-        //case nodeBackend = "http://localhost:7000/api"
-        case nodeBackend = "https://sepp-coin-tracker.herokuapp.com/api"
+        case nodeBackend = "http://localhost:3000/api"
+        // case nodeBackend = "https://sepp-coin-tracker.herokuapp.com/api"
     }
     
     enum HttpMethod: String {
@@ -42,7 +42,7 @@ class API {
     }
     
     func makeRequest (baseUrl: BaseUrl, urlPath: String = "", httpMethod: HttpMethod = .get, payload: Data? = nil,
-                     httpHeaders: [HttpHeader] = [], contentType: ContentType = .application_json) async throws -> Data {
+                      httpHeaders: [HttpHeader] = [], contentType: ContentType = .application_json, accept: ContentType = .application_json) async throws -> Data {
         let fullUrl = baseUrl.rawValue + urlPath
         
         print("Full url " + fullUrl)
@@ -56,10 +56,11 @@ class API {
         var request = URLRequest(url: url)
         
         request.httpMethod = httpMethod.rawValue
-        request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
+        request.setValue(accept.rawValue, forHTTPHeaderField: "Accept")
         
         if (payload != nil) {
             request.httpBody = payload
+            request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
         }
         
         for httpHeader in httpHeaders {

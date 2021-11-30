@@ -63,14 +63,15 @@ struct LoginView: View {
                             .background(Color.white)
                             .cornerRadius(20.0)
                             .shadow(radius: 10.0, x: 20, y: 10)
+                            .foregroundColor(.black)
                         
                         SecureField("Password", text: self.$password)
                             .padding()
                             .background(Color.white)
                             .cornerRadius(20.0)
                             .shadow(radius: 10.0, x: 20, y: 10)
+                            .foregroundColor(.black)
                     }.padding([.leading, .trailing], 27.5)
-                    
                     Button(action: {
                         Task.init {
                             await self.login(username: self.$email.wrappedValue, password: self.$password.wrappedValue)
