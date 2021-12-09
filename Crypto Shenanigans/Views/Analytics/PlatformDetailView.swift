@@ -40,14 +40,15 @@ struct PlatformDetailView: View {
                     }
                 ){
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("Total")
-                        .font(.headline)
-                        Spacer()
-                        Text("\(Mapper.formatDoubleToString(balanceController.total.value / self.currentRatio)) \(balanceController.currency)")
+                    NavigationLink(destination: TotalOverview(total: balanceController.total.value, currency: balanceController.currency, items: balanceController.items)) {
+                        HStack {
+                            Text("Total")
+                                .font(.headline)
+                            Spacer()
+                            Text("\(Mapper.formatDoubleToString(balanceController.total.value / self.currentRatio)) \(balanceController.currency)")
+                        }
                     }
                 }.padding(3)
-                
                 ForEach(balanceController.items) { balance in
                     BalanceItemView(balance: balance, currency: balanceController.currency, ratio: self.currentRatio)
                 }
@@ -68,7 +69,7 @@ struct PlatformDetailView: View {
                 }
             }
         })
-        .if(balanceController.loading) { view in
+        .if(balanceController.loading || myTradesController.loading) { view in
             view.overlay(ProgressView())
         }
     }

@@ -11,7 +11,7 @@ struct HomeView: View {
     // There seems to be a bug in the current SwiftUI version (https://stackoverflow.com/questions/63080830/swifui-onappear-gets-called-twice),
     // TODO: Remove this workaround once the bug is fixed by the framework.
     @State private var firstAppear = true
-    
+     
     private let apiHelper = API()
     
     func logout() async {
@@ -28,11 +28,17 @@ struct HomeView: View {
         
     var body: some View {
             List {
-                ForEach(Module.data) { module in
-                    NavigationLink(destination: PlatformListView(name:module.title)
-                                    .environmentObject(platformModelController)) {
-                        ModuleView(module: module)
-                    }
+                NavigationLink(destination: PlatformListView(name: Module.analytics.title)
+                                .environmentObject(platformModelController)) {
+                    ModuleView(module: Module.analytics)
+                }
+                NavigationLink(destination: PlatformListView(name: Module.botTrading.title)
+                                .environmentObject(platformModelController)) {
+                    ModuleView(module: Module.botTrading)
+                }
+                NavigationLink(destination: SavingsPlanListView()
+                                .environmentObject(platformModelController)) {
+                    ModuleView(module: Module.savingsPlan)
                 }
             }
             .onAppear(perform: {

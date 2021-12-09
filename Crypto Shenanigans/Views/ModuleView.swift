@@ -20,7 +20,7 @@ struct ModuleView: View {
 }
 
 struct ModuleView_Preview: PreviewProvider {
-    static var module = Module.data[0]
+    static var module = Module.analytics
     static var previews: some View {
         ModuleView(module: module)
             .background(Color.black)
