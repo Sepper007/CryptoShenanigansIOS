@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2438E8A276C2F71009CC563 /* CreateOrEditSavingsPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E89276C2F71009CC563 /* CreateOrEditSavingsPlan.swift */; };
+		D2438E8C276C589C009CC563 /* PlatformMetaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E8B276C589C009CC563 /* PlatformMetaController.swift */; };
+		D2438E8E276C58E0009CC563 /* PlatformMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E8D276C58E0009CC563 /* PlatformMetadata.swift */; };
+		D2438E90276C595A009CC563 /* CoinMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E8F276C595A009CC563 /* CoinMetadata.swift */; };
+		D2438E92276C64E7009CC563 /* FrequencyUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E91276C64E7009CC563 /* FrequencyUnit.swift */; };
 		D24AEDD727437FAB00098189 /* Crypto_ShenanigansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24AEDD627437FAB00098189 /* Crypto_ShenanigansApp.swift */; };
 		D24AEDD927437FAB00098189 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24AEDD827437FAB00098189 /* ContentView.swift */; };
 		D24AEDDB27437FB000098189 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24AEDDA27437FB000098189 /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2438E89276C2F71009CC563 /* CreateOrEditSavingsPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrEditSavingsPlan.swift; sourceTree = "<group>"; };
+		D2438E8B276C589C009CC563 /* PlatformMetaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformMetaController.swift; sourceTree = "<group>"; };
+		D2438E8D276C58E0009CC563 /* PlatformMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformMetadata.swift; sourceTree = "<group>"; };
+		D2438E8F276C595A009CC563 /* CoinMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMetadata.swift; sourceTree = "<group>"; };
+		D2438E91276C64E7009CC563 /* FrequencyUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyUnit.swift; sourceTree = "<group>"; };
 		D24AEDD327437FAB00098189 /* Crypto Shenanigans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Shenanigans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24AEDD627437FAB00098189 /* Crypto_ShenanigansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_ShenanigansApp.swift; sourceTree = "<group>"; };
 		D24AEDD827437FAB00098189 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +130,7 @@
 				D2584D2E27487DC2003BD3BA /* API */,
 				D2584D352748DA38003BD3BA /* Module.swift */,
 				D289A08A274CC69300A464C1 /* MappedBalance.swift */,
+				D2438E91276C64E7009CC563 /* FrequencyUnit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +192,8 @@
 				D26FCB9E2755F520000E9137 /* MyTradesResponse.swift */,
 				D268180B275F1A9E00CC8BB5 /* SavingsPlan.swift */,
 				D258D5F12761E3F200F952BD /* CreateSavingsPlanResponse.swift */,
+				D2438E8D276C58E0009CC563 /* PlatformMetadata.swift */,
+				D2438E8F276C595A009CC563 /* CoinMetadata.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -201,6 +214,7 @@
 			children = (
 				D2681807275F197000CC8BB5 /* SavingsPlanView.swift */,
 				D2681809275F19C800CC8BB5 /* SavingsPlanListView.swift */,
+				D2438E89276C2F71009CC563 /* CreateOrEditSavingsPlan.swift */,
 			);
 			path = SavingsPlans;
 			sourceTree = "<group>";
@@ -212,6 +226,7 @@
 				D289A088274CC1AD00A464C1 /* BalanceController.swift */,
 				D26FCB9C2755F4EB000E9137 /* MyTradesController.swift */,
 				D268180D275F1B2700CC8BB5 /* SavingsPlanController.swift */,
+				D2438E8B276C589C009CC563 /* PlatformMetaController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,15 +327,20 @@
 				D2681808275F197000CC8BB5 /* SavingsPlanView.swift in Sources */,
 				D289A078274C9ADC00A464C1 /* PlatformListView.swift in Sources */,
 				D2584D322748882D003BD3BA /* HomeView.swift in Sources */,
+				D2438E90276C595A009CC563 /* CoinMetadata.swift in Sources */,
 				D289A08D274CCC7F00A464C1 /* BalanceItemView.swift in Sources */,
+				D2438E8C276C589C009CC563 /* PlatformMetaController.swift in Sources */,
 				D289A095274E289500A464C1 /* BalanceItem.swift in Sources */,
 				D2584D382748DD13003BD3BA /* ModuleView.swift in Sources */,
 				D2584D362748DA38003BD3BA /* Module.swift in Sources */,
 				D268180E275F1B2700CC8BB5 /* SavingsPlanController.swift in Sources */,
 				D258D5F22761E3F200F952BD /* CreateSavingsPlanResponse.swift in Sources */,
+				D2438E8E276C58E0009CC563 /* PlatformMetadata.swift in Sources */,
 				D268180A275F19C800CC8BB5 /* SavingsPlanListView.swift in Sources */,
 				D289A093274E287200A464C1 /* BalanceResponse.swift in Sources */,
 				D289A080274CA0A900A464C1 /* PlatformStatus.swift in Sources */,
+				D2438E92276C64E7009CC563 /* FrequencyUnit.swift in Sources */,
+				D2438E8A276C2F71009CC563 /* CreateOrEditSavingsPlan.swift in Sources */,
 				D289A089274CC1AD00A464C1 /* BalanceController.swift in Sources */,
 				D24AEDE72743889000098189 /* API.swift in Sources */,
 				D289A076274C873000A464C1 /* PlatformView.swift in Sources */,

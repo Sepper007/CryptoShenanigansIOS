@@ -11,18 +11,30 @@ struct SavingsPlanListView: View {
     @State private var confirmationDialogShow = false
     @State private var confirmationSavingsId = 0
     
+    @State private var createModeActive = false
+    
+    @EnvironmentObject var platformModelController: PlatformModelController
+    
     var body: some View {
+        NavigationLink(destination: CreateOrEditSavingsPlan(editMode: false).environmentObject(platformModelController), isActive: $createModeActive) {
+            EmptyView()
+        }.hidden()
         List {
             Section("Existing recurring payments") {
                 ForEach(savingsPlanController.items) { savingsPlan in
-                    SavingsPlanView(data: savingsPlan)
-                        .swipeActions(allowsFullSwipe: false) {
-                            Button(role: .destructive)  {
-                                confirmationSavingsId = savingsPlan.id
-                                confirmationDialogShow = true
-                            } label : {
-                                Label("Delete", systemImage: "trash.fill")
-                            }
+                    NavigationLink(destination: CreateOrEditSavingsPlan(editMode: true,
+                                                                        platformId: savingsPlan.platformName, tradingPair: savingsPlan.tradingPair, amount: savingsPlan.amount,frequencyUnit: FrequencyUnit(rawValue:savingsPlan.frequencyUnit) ?? .day,
+                                                                        frequencyValue: savingsPlan.frequencyValue, currency: savingsPlan.currency)
+                                    .environmentObject(platformModelController)) {
+                        SavingsPlanView(data: savingsPlan)
+                            .swipeActions(allowsFullSwipe: false) {
+                                Button(role: .destructive)  {
+                                    confirmationSavingsId = savingsPlan.id
+                                    confirmationDialogShow = true
+                                } label : {
+                                    Label("Delete", systemImage: "trash.fill")
+                                }
+                        }
                     }
                 }
             }
@@ -49,6 +61,13 @@ struct SavingsPlanListView: View {
         })
         .if(savingsPlanController.loading) { view in
             view.overlay(ProgressView())
-        }.navigationTitle(Module.savingsPlan.title)
+        }
+        .navigationTitle(Module.savingsPlan.title)
+        .navigationBarItems(trailing: Button(action: {
+            createModeActive = true
+        }) {
+            Label("Create", systemImage: "plus")
+        })
+
     }
 }

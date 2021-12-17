@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct SavingsPlanView: View {
-    @EnvironmentObject var platformModelController: PlatformModelController
-    
+
     var data: SavingsPlan
     
     static func generateFrequencyText(frequencyUnit: String, frequencyValue: Int) throws -> String {
