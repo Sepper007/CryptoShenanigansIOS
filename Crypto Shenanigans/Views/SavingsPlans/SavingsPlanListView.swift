@@ -12,29 +12,35 @@ struct SavingsPlanListView: View {
     @State private var confirmationSavingsId = 0
     
     @State private var createModeActive = false
+    @State private var editModeActive = false
     
     @EnvironmentObject var platformModelController: PlatformModelController
     
+    func reload () async {
+        await savingsPlanController.load()
+    }
+    
     var body: some View {
-        NavigationLink(destination: CreateOrEditSavingsPlan(editMode: false).environmentObject(platformModelController), isActive: $createModeActive) {
+        NavigationLink(destination: CreateOrEditSavingsPlan(editMode: false, reloadSavingsPlans: self.reload).environmentObject(platformModelController), isActive: $createModeActive) {
             EmptyView()
         }.hidden()
         List {
             Section("Existing recurring payments") {
                 ForEach(savingsPlanController.items) { savingsPlan in
-                    NavigationLink(destination: CreateOrEditSavingsPlan(editMode: true,
-                                                                        platformId: savingsPlan.platformName, tradingPair: savingsPlan.tradingPair, amount: savingsPlan.amount,frequencyUnit: FrequencyUnit(rawValue:savingsPlan.frequencyUnit) ?? .day,
-                                                                        frequencyValue: savingsPlan.frequencyValue, currency: savingsPlan.currency,
-                                                                        savingsPlanId: savingsPlan.id)
-                                    .environmentObject(platformModelController)) {
-                        SavingsPlanView(data: savingsPlan)
-                            .swipeActions(allowsFullSwipe: false) {
-                                Button(role: .destructive)  {
-                                    confirmationSavingsId = savingsPlan.id
-                                    confirmationDialogShow = true
-                                } label : {
-                                    Label("Delete", systemImage: "trash.fill")
-                                }
+                    HStack {
+                        NavigationLink(destination: CreateOrEditSavingsPlan(editMode: true,reloadSavingsPlans: self.reload,
+                                                                            platformId: savingsPlan.platformName, tradingPair: savingsPlan.tradingPair, amount: savingsPlan.amount,frequencyUnit: FrequencyUnit(rawValue:savingsPlan.frequencyUnit) ?? .day,
+                                                                            frequencyValue: savingsPlan.frequencyValue, currency: savingsPlan.currency,
+                                                                            savingsPlanId: savingsPlan.id)
+                                        .environmentObject(platformModelController)) {
+                            SavingsPlanView(data: savingsPlan)
+                        }
+                    }.swipeActions(allowsFullSwipe: false) {
+                        Button(role: .destructive)  {
+                            confirmationSavingsId = savingsPlan.id
+                            confirmationDialogShow = true
+                        } label : {
+                            Label("Delete", systemImage: "trash.fill")
                         }
                     }
                 }
@@ -48,6 +54,7 @@ struct SavingsPlanListView: View {
             Button("Yes", role: .destructive) {
                 Task.init {
                     await savingsPlanController.removeItem(savingsPlanId: savingsId)
+                    await reload()
                 }
             }
             Button("No", role: .cancel) {}

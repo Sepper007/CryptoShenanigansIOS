@@ -1,5 +1,5 @@
 enum FrequencyUnit: String {
-    case hour = "Hour"
-    case day = "Day"
-    case minute = "Minute"
+    case hour = "hour"
+    case day = "day"
+    case minute = "minute"
 }

@@ -9,6 +9,10 @@ struct CreateOrEditSavingsPlan: View {
     
     var editMode: Bool
     
+    var reloadSavingsPlans: (() async -> Void);
+    
+    @Environment(\.presentationMode) var presentation
+    
     @State private var platformId: String
     @State private var tradingPair: String
     @State private var amount: Double
@@ -18,7 +22,7 @@ struct CreateOrEditSavingsPlan: View {
     
     private var savingsPlanId: Int
     
-    init(editMode: Bool, platformId: String = "", tradingPair: String = "", amount: Double = 0.0, frequencyUnit: FrequencyUnit = .day, frequencyValue: Int = 1, currency: String = "", savingsPlanId: Int = 0) {
+    init(editMode: Bool, reloadSavingsPlans: @escaping (() async -> Void), platformId: String = "", tradingPair: String = "", amount: Double = 0.0, frequencyUnit: FrequencyUnit = .day, frequencyValue: Int = 1, currency: String = "", savingsPlanId: Int = 0) {
         self.editMode = editMode
         
         self._platformId = State(initialValue: platformId)
@@ -28,6 +32,7 @@ struct CreateOrEditSavingsPlan: View {
         self._frequencyValue = State(initialValue: frequencyValue)
         self._currency = State(initialValue: currency)
         self.savingsPlanId = savingsPlanId
+        self.reloadSavingsPlans = reloadSavingsPlans
     }
     
     var availableCurrencies: [String] {
@@ -43,8 +48,6 @@ struct CreateOrEditSavingsPlan: View {
     }
     
     private var availableFrequencies: [FrequencyValue] {
-        print(frequencyUnit.rawValue)
-        
         switch frequencyUnit {
         case .hour:
             return [1,2,4,6,12].map({generateFrequencyValue(num: $0, desc: FrequencyUnit.hour.rawValue)})
@@ -134,10 +137,12 @@ struct CreateOrEditSavingsPlan: View {
                 } else {
                     await savingsPlanController.addItem(SavingsPlan(tradingPair: self.tradingPair, amount: self.amount, currency: self.currency, platformName: self.platformId, platformDescription: "", frequencyUnit: self.frequencyUnit.rawValue, frequencyValue: self.frequencyValue, id: 0))
                 }
+                self.presentation.wrappedValue.dismiss()
+                await self.reloadSavingsPlans()
             }
         }) {
             Text("Save")
-        }).disabled(!(platformId != "" && tradingPair != "" && amount > 0.0 && frequencyValue > 0 && currency != ""))
+        }.disabled(!(platformId != "" && tradingPair != "" && amount > 0.0 && frequencyValue > 0 && currency != "")))
         .navigationBarTitle("\(editMode ? "Edit" : "Create") Plan")
         .onAppear(perform: {
             if(platformId != "") {
