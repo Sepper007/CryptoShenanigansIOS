@@ -16,7 +16,9 @@ struct CreateOrEditSavingsPlan: View {
     @State private var frequencyValue: Int
     @State private var currency: String
     
-    init(editMode: Bool, platformId: String = "", tradingPair: String = "", amount: Double = 0.0, frequencyUnit: FrequencyUnit = .day, frequencyValue: Int = 1, currency: String = "") {
+    private var savingsPlanId: Int
+    
+    init(editMode: Bool, platformId: String = "", tradingPair: String = "", amount: Double = 0.0, frequencyUnit: FrequencyUnit = .day, frequencyValue: Int = 1, currency: String = "", savingsPlanId: Int = 0) {
         self.editMode = editMode
         
         self._platformId = State(initialValue: platformId)
@@ -25,6 +27,7 @@ struct CreateOrEditSavingsPlan: View {
         self._frequencyUnit = State(initialValue: frequencyUnit)
         self._frequencyValue = State(initialValue: frequencyValue)
         self._currency = State(initialValue: currency)
+        self.savingsPlanId = savingsPlanId
     }
     
     var availableCurrencies: [String] {
@@ -57,6 +60,8 @@ struct CreateOrEditSavingsPlan: View {
     @State private var toggleIsOn = false
     
     @StateObject private var platformMetaController = PlatformMetaController()
+    
+    @StateObject private var savingsPlanController = SavingsPlanController()
     
     var body: some View {
         Form {
@@ -124,11 +129,15 @@ struct CreateOrEditSavingsPlan: View {
             }
         }.navigationBarItems(trailing: Button(action: {
             Task.init {
-                // TODO: Add save API calls
+                if (editMode) {
+                    await savingsPlanController.editItem(savingsPlanId: self.savingsPlanId, updatedPlan: UpdateSavingsPlanPayload(amount: self.amount, frequencyUnit: self.frequencyUnit.rawValue, frequencyValue: self.frequencyValue))
+                } else {
+                    await savingsPlanController.addItem(SavingsPlan(tradingPair: self.tradingPair, amount: self.amount, currency: self.currency, platformName: self.platformId, platformDescription: "", frequencyUnit: self.frequencyUnit.rawValue, frequencyValue: self.frequencyValue, id: 0))
+                }
             }
         }) {
             Text("Save")
-        })
+        }).disabled(!(platformId != "" && tradingPair != "" && amount > 0.0 && frequencyValue > 0 && currency != ""))
         .navigationBarTitle("\(editMode ? "Edit" : "Create") Plan")
         .onAppear(perform: {
             if(platformId != "") {

@@ -45,6 +45,7 @@
 		D289A091274E281F00A464C1 /* BalanceTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A090274E281F00A464C1 /* BalanceTotal.swift */; };
 		D289A093274E287200A464C1 /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A092274E287200A464C1 /* BalanceResponse.swift */; };
 		D289A095274E289500A464C1 /* BalanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289A094274E289500A464C1 /* BalanceItem.swift */; };
+		D2B24AC2277AECE7000AFC06 /* UpdateSavingsPlanPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B24AC1277AECE7000AFC06 /* UpdateSavingsPlanPayload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		D289A090274E281F00A464C1 /* BalanceTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTotal.swift; sourceTree = "<group>"; };
 		D289A092274E287200A464C1 /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
 		D289A094274E289500A464C1 /* BalanceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItem.swift; sourceTree = "<group>"; };
+		D2B24AC1277AECE7000AFC06 /* UpdateSavingsPlanPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSavingsPlanPayload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				D258D5F12761E3F200F952BD /* CreateSavingsPlanResponse.swift */,
 				D2438E8D276C58E0009CC563 /* PlatformMetadata.swift */,
 				D2438E8F276C595A009CC563 /* CoinMetadata.swift */,
+				D2B24AC1277AECE7000AFC06 /* UpdateSavingsPlanPayload.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				D24AEDD727437FAB00098189 /* Crypto_ShenanigansApp.swift in Sources */,
 				D289A08F274CCF6100A464C1 /* Mapper.swift in Sources */,
 				D289A091274E281F00A464C1 /* BalanceTotal.swift in Sources */,
+				D2B24AC2277AECE7000AFC06 /* UpdateSavingsPlanPayload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

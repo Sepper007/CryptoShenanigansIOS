@@ -42,6 +42,19 @@ class SavingsPlanController: ObservableObject {
         }
     }
     
+    func editItem (savingsPlanId: Int, updatedPlan: UpdateSavingsPlanPayload) async {
+        do {
+            try await apiHelper.makeRequest(baseUrl: .nodeBackend, urlPath: "/savings-plans/\(savingsPlanId)", httpMethod: .put, payload:  API.jsonEncoder.encode(updatedPlan), contentType: .application_json)
+        } catch CustomError.HttpResponseError(let message) {
+            loading = false
+            print("Updating Savings Plan call failed with error message \(message)")
+        } catch {
+            loading = false
+            print("Custom error")
+            print(error)
+        }
+    }
+    
     func addItem (_ newPlan: SavingsPlan) async {
         do {
             let decodedData = try API.jsonEncoder.encode(newPlan)

@@ -24,7 +24,8 @@ struct SavingsPlanListView: View {
                 ForEach(savingsPlanController.items) { savingsPlan in
                     NavigationLink(destination: CreateOrEditSavingsPlan(editMode: true,
                                                                         platformId: savingsPlan.platformName, tradingPair: savingsPlan.tradingPair, amount: savingsPlan.amount,frequencyUnit: FrequencyUnit(rawValue:savingsPlan.frequencyUnit) ?? .day,
-                                                                        frequencyValue: savingsPlan.frequencyValue, currency: savingsPlan.currency)
+                                                                        frequencyValue: savingsPlan.frequencyValue, currency: savingsPlan.currency,
+                                                                        savingsPlanId: savingsPlan.id)
                                     .environmentObject(platformModelController)) {
                         SavingsPlanView(data: savingsPlan)
                             .swipeActions(allowsFullSwipe: false) {
