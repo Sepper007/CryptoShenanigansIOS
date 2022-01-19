@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20296E32797CFE8003AF262 /* BotTradingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296E22797CFE7003AF262 /* BotTradingListView.swift */; };
+		D20296E52797D09B003AF262 /* TradingBotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296E42797D09B003AF262 /* TradingBotController.swift */; };
+		D20296E72797E344003AF262 /* BotTradingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296E62797E344003AF262 /* BotTradingResponse.swift */; };
+		D20296EE2797F13E003AF262 /* TradingBotItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296ED2797F13E003AF262 /* TradingBotItemView.swift */; };
 		D2438E8A276C2F71009CC563 /* CreateOrEditSavingsPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E89276C2F71009CC563 /* CreateOrEditSavingsPlan.swift */; };
 		D2438E8C276C589C009CC563 /* PlatformMetaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E8B276C589C009CC563 /* PlatformMetaController.swift */; };
 		D2438E8E276C58E0009CC563 /* PlatformMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2438E8D276C58E0009CC563 /* PlatformMetadata.swift */; };
@@ -49,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20296E22797CFE7003AF262 /* BotTradingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotTradingListView.swift; sourceTree = "<group>"; };
+		D20296E42797D09B003AF262 /* TradingBotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingBotController.swift; sourceTree = "<group>"; };
+		D20296E62797E344003AF262 /* BotTradingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotTradingResponse.swift; sourceTree = "<group>"; };
+		D20296ED2797F13E003AF262 /* TradingBotItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingBotItemView.swift; sourceTree = "<group>"; };
 		D2438E89276C2F71009CC563 /* CreateOrEditSavingsPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrEditSavingsPlan.swift; sourceTree = "<group>"; };
 		D2438E8B276C589C009CC563 /* PlatformMetaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformMetaController.swift; sourceTree = "<group>"; };
 		D2438E8D276C58E0009CC563 /* PlatformMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformMetadata.swift; sourceTree = "<group>"; };
@@ -102,9 +110,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D20296E12797CFCD003AF262 /* BotTrading */ = {
+			isa = PBXGroup;
+			children = (
+				D20296E22797CFE7003AF262 /* BotTradingListView.swift */,
+			);
+			path = BotTrading;
+			sourceTree = "<group>";
+		};
 		D228120A2746303A0018ED81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D20296E12797CFCD003AF262 /* BotTrading */,
 				D2681806275F195B00CC8BB5 /* SavingsPlans */,
 				D2681805275F176300CC8BB5 /* Analytics */,
 				D289A07D274CA03C00A464C1 /* SubViews */,
@@ -186,6 +203,7 @@
 		D2584D2E27487DC2003BD3BA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D20296E62797E344003AF262 /* BotTradingResponse.swift */,
 				D2584D2F27487DE4003BD3BA /* LoggedInResponse.swift */,
 				D289A073274C49CA00A464C1 /* Platform.swift */,
 				D289A090274E281F00A464C1 /* BalanceTotal.swift */,
@@ -230,6 +248,7 @@
 				D26FCB9C2755F4EB000E9137 /* MyTradesController.swift */,
 				D268180D275F1B2700CC8BB5 /* SavingsPlanController.swift */,
 				D2438E8B276C589C009CC563 /* PlatformMetaController.swift */,
+				D20296E42797D09B003AF262 /* TradingBotController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +259,7 @@
 				D289A08C274CCC7F00A464C1 /* BalanceItemView.swift */,
 				D289A07F274CA0A900A464C1 /* PlatformStatus.swift */,
 				D26FCBA02755F864000E9137 /* TradeItem.swift */,
+				D20296ED2797F13E003AF262 /* TradingBotItemView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -335,15 +355,19 @@
 				D2438E8C276C589C009CC563 /* PlatformMetaController.swift in Sources */,
 				D289A095274E289500A464C1 /* BalanceItem.swift in Sources */,
 				D2584D382748DD13003BD3BA /* ModuleView.swift in Sources */,
+				D20296E52797D09B003AF262 /* TradingBotController.swift in Sources */,
 				D2584D362748DA38003BD3BA /* Module.swift in Sources */,
 				D268180E275F1B2700CC8BB5 /* SavingsPlanController.swift in Sources */,
+				D20296E72797E344003AF262 /* BotTradingResponse.swift in Sources */,
 				D258D5F22761E3F200F952BD /* CreateSavingsPlanResponse.swift in Sources */,
 				D2438E8E276C58E0009CC563 /* PlatformMetadata.swift in Sources */,
+				D20296EE2797F13E003AF262 /* TradingBotItemView.swift in Sources */,
 				D268180A275F19C800CC8BB5 /* SavingsPlanListView.swift in Sources */,
 				D289A093274E287200A464C1 /* BalanceResponse.swift in Sources */,
 				D289A080274CA0A900A464C1 /* PlatformStatus.swift in Sources */,
 				D2438E92276C64E7009CC563 /* FrequencyUnit.swift in Sources */,
 				D2438E8A276C2F71009CC563 /* CreateOrEditSavingsPlan.swift in Sources */,
+				D20296E32797CFE8003AF262 /* BotTradingListView.swift in Sources */,
 				D289A089274CC1AD00A464C1 /* BalanceController.swift in Sources */,
 				D24AEDE72743889000098189 /* API.swift in Sources */,
 				D289A076274C873000A464C1 /* PlatformView.swift in Sources */,

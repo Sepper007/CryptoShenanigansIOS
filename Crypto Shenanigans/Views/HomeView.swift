@@ -32,7 +32,7 @@ struct HomeView: View {
                                 .environmentObject(platformModelController)) {
                     ModuleView(module: Module.analytics)
                 }
-                NavigationLink(destination: PlatformListView(name: Module.botTrading.title)
+                NavigationLink(destination: BotTradingListView()
                                 .environmentObject(platformModelController)) {
                     ModuleView(module: Module.botTrading)
                 }

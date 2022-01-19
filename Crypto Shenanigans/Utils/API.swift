@@ -11,7 +11,7 @@ enum CustomError: Error {
 class API {
     
     enum BaseUrl: String {
-        case nodeBackend = "http://localhost:3000/api"
+        case nodeBackend = "http://localhost:3099/api"
         // case nodeBackend = "https://sepp-coin-tracker.herokuapp.com/api"
     }
     
